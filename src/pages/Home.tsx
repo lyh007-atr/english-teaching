@@ -12,10 +12,10 @@ export default function Home() {
     <div>
       {/* Hero */}
       <div className="text-center py-8 mb-6">
-        <h1 className="text-4xl font-extrabold text-gray-800 mb-3">
+        <h1 className="text-2xl sm:text-4xl font-extrabold text-gray-800 mb-2 sm:mb-3">
           📚 从零开始学英语
         </h1>
-        <p className="text-lg text-gray-500 max-w-md mx-auto">
+        <p className="text-sm sm:text-lg text-gray-500 max-w-md mx-auto">
           专为零基础学习者设计的英语课程，一步一步带你学会英语
         </p>
         {doneLessons > 0 && (

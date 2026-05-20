@@ -78,40 +78,41 @@ export default function Lesson() {
   }
 
   const tabs = [
-    { key: 'content' as const, label: '📖 学习内容' },
-    { key: 'practice' as const, label: '✏️ 练习' },
-    { key: 'chat' as const, label: '🤖 AI老师' },
+    { key: 'content' as const, label: '📖', fullLabel: '学习' },
+    { key: 'practice' as const, label: '✏️', fullLabel: '练习' },
+    { key: 'chat' as const, label: '🤖', fullLabel: 'AI老师' },
   ]
 
   return (
     <div>
       {/* Header */}
-      <div className="mb-6">
-        <Link to={`/stage/${stage.id}`} className="text-sm text-gray-400 hover:text-primary-500 transition-colors">
+      <div className="mb-4 sm:mb-6">
+        <Link to={`/stage/${stage.id}`} className="text-xs sm:text-sm text-gray-400 hover:text-primary-500 transition-colors">
           ← 返回{stage.subtitle}
         </Link>
-        <div className="flex items-center gap-3 mt-2">
+        <div className="flex items-center gap-2 sm:gap-3 mt-1 sm:mt-2">
           <div className="flex-1">
-            <h1 className="text-xl font-extrabold text-gray-800">{lesson.title}</h1>
-            <p className="text-sm text-gray-400">
+            <h1 className="text-lg sm:text-xl font-extrabold text-gray-800">{lesson.title}</h1>
+            <p className="text-xs sm:text-sm text-gray-400">
               第{lessonIndex + 1}课 · {stage.name}
-              {isDone && <span className="ml-2 text-green-500">✅ 已完成</span>}
+              {isDone && <span className="ml-1 sm:ml-2 text-green-500 text-xs sm:text-sm">✅</span>}
             </p>
           </div>
         </div>
       </div>
 
       {/* Tabs */}
-      <div className="flex gap-2 mb-6 bg-gray-100 p-1 rounded-xl">
+      <div className="sticky top-12 sm:top-14 z-40 bg-gray-100 p-1 rounded-xl mb-4 sm:mb-6 flex gap-1 sm:gap-2">
         {tabs.map((t) => (
           <button
             key={t.key}
             onClick={() => setTab(t.key)}
-            className={`flex-1 py-2.5 rounded-lg text-sm font-medium transition-all ${
+            className={`flex-1 py-2 sm:py-2.5 rounded-lg text-xs sm:text-sm font-medium transition-all ${
               tab === t.key ? 'bg-white shadow-sm text-primary-600' : 'text-gray-500 hover:text-gray-700'
             }`}
           >
-            {t.label}
+            <span className="sm:hidden">{t.label}</span>
+            <span className="hidden sm:inline">{t.label} {t.fullLabel}</span>
           </button>
         ))}
       </div>
