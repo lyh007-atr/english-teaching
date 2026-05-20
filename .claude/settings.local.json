@@ -2,7 +2,8 @@
   "permissions": {
     "allow": [
       "Bash(start http://localhost:5175)",
-      "Bash(start http://localhost:5173)"
+      "Bash(start http://localhost:5173)",
+      "Bash(npm install *)"
     ]
   }
 }
