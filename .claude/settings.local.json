@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(start http://localhost:5175)",
+      "Bash(start http://localhost:5173)"
+    ]
+  }
+}
